@@ -40,4 +40,8 @@ class Test_Random_pairs < Minitest::Test
 		names = "josh", "john", "kevin", "nick", "steve"
 		assert_equal(3, randomized_array(names).count)
 	end
+	def test_that_can_handle_larger_number_with_random
+		names = "josh", "john", "kevin", "nick", "steve", "travis", "trey", "phil"
+		assert_equal(4, randomized_array(names).count)
+	end
 end 
