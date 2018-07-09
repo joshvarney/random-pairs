@@ -44,4 +44,17 @@ class Test_Random_pairs < Minitest::Test
 		names = "josh", "john", "kevin", "nick", "steve", "travis", "trey", "phil"
 		assert_equal(4, randomized_array(names).count)
 	end
+	def test_that_returns_two_elements_in_sub_arrays
+		names = "josh", "john", "kevin", "nick"
+		assert_equal(2, randomized_array(names)[0][0..-1].count)
+	end
+	def test_that_returns_right_number_of_elements_for_odd_number
+		names =  "josh", "john", "kevin", "nick", "steve", "travis", "trey", "phil", "jaxon"
+		assert_equal(2, randomized_array(names)[0][0..-1].count)
+	end
+	def test_that_returns_1_on_last_array_if_odd_number_of_names
+		names = "josh", "john", "kevin", "nick", "steve", "travis", "trey", "phil", "jaxon"
+		assert_equal(1, randomized_array(names)[-1][0..-1].count)
+	end
+
 end 
