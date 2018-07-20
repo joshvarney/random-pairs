@@ -1,12 +1,79 @@
 <h1>Here is your random groups:</h1>
 <br>
-<h2><%=random_grouping%></h2>
-<br><br>
+	<%if random_grouping.count == 1 && random_grouping[0].count == 2%>
+		<h2>Your only group is: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
+	<%elsif random_grouping.count == 1 && random_grouping[0].count == 3%>
+		<h2>Your only group is: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>, <%=random_grouping[0][2]%>.</h2>
+	<%elsif random_grouping.count == 2 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
+		<h2>Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+	<%elsif random_grouping.count == 2 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
+		<h2>Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>, <%=random_grouping[1][2]%>.</h2>
+	<%elsif random_grouping.count == 3 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
+		<h2>Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>.</h2>
+	<%elsif random_grouping.count == 3 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
+		<h2>Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>, <%=random_grouping[2][2]%>.</h2>
+	<%elsif random_grouping.count == 4 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>.</h2>
+	<%elsif random_grouping.count == 4 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>, <%=random_grouping[3][2]%>.</h2>
+	<%elsif random_grouping.count == 5 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>.</h2>
+		<h2>Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>.</h2>
+	<%elsif random_grouping.count == 5 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>.</h2>
+		<h2>Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>.</h2>
+		<h2>Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>, <%=random_grouping[4][2]%>.</h2>
+	<%elsif random_grouping.count == 6 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+	<%elsif random_grouping.count == 6 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>.</h2>
+		<h2>Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>, <%=random_grouping[5][2]%>.</h2>
+	<%elsif random_grouping.count == 7 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+		<h2>Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>.</h2>
+	<%elsif random_grouping.count == 7 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+		<h2>Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>, <%=random_grouping[6][2]%>.</h2>
+	<%elsif random_grouping.count == 8 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+		<h2>Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>; Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>.</h2>
+	<%elsif random_grouping.count == 8 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+		<h2>Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>; Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>, <%=random_grouping[7][2]%>.</h2>
+	<%elsif random_grouping.count == 9 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%></h2>
+		<h2>Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%>; Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>.</h2>
+		<h2>Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>; Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>; Group 9: <%=random_grouping[8][0]%>, <%=random_grouping[8][1]%>.</h2>
+	<%elsif random_grouping.count == 9 && random_grouping[-1].count == 3%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%></h2>
+		<h2>Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>; Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>.</h2>
+		<h2>Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>; Group 9: <%=random_grouping[8][0]%>, <%=random_grouping[8][1]%>, <%=random_grouping[8][2]%>.</h2>
+	<%elsif random_grouping.count == 10 && random_grouping[-1].count == 2%>
+		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%></h2>
+		<h2>Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>; Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>.</h2>
+		<h2>Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>; Group 9: <%=random_grouping[8][0]%>, <%=random_grouping[8][1]%>; Group 10: <%=random_grouping[9][0]%>, <%=random_grouping[9][1]%>.</h2>
+	<%end%>
+<br>
 <h1>Would you like to make a new group?</h1>
-<input type="radio" name="choice-same-group" id="choice-for-add">
+<input type="radio" name="choice-same-group" id="choice-for-new">
 <label for="choice-for-new">Make new group</label>
 <div class="reveal-if-active">
-  <h1>Make new group</h1>
+  <h1>Make new groups</h1>
 <form method="post" action="names">
 <input type="text" name="name1" placeholder="1st Name" required autofocus>
 <input type="text" name="name2" placeholder="2nd Name" required>
