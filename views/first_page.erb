@@ -1,31 +1,29 @@
 <h1>Enter the names for your groups:</h1>
-<div class="input_boxes">
-<form method="post" action="names">
-<input type="text" name="name1" placeholder="1st Name" required autofocus>
-<input type="text" name="name2" placeholder="2nd Name" required>
-<input type="text" name="name3" placeholder="3rd Name">
-<input type="text" name="name4" placeholder="4th Name">
+<h1>Make random groups</h1>
+<div class="btns">
+<button onclick="addBoxes()">Add</button>
+<button onclick="removeBoxes()">Remove</button>
 <br><br>
-<input type="text" name="name5" placeholder="5th Name">
-<input type="text" name="name6" placeholder="6th Name">
-<input type="text" name="name7" placeholder="7th Name">
-<input type="text" name="name8" placeholder="8th Name">
-<br><br>
-<input type="text" name="name9" placeholder="9th Name">
-<input type="text" name="name10" placeholder="10th Name">
-<input type="text" name="name11" placeholder="11th Name">
-<input type="text" name="name12" placeholder="12th Name">
-<br><br>
-<input type="text" name="name13" placeholder="13th Name">
-<input type="text" name="name14" placeholder="14th Name">
-<input type="text" name="name15" placeholder="15th Name">
-<input type="text" name="name16" placeholder="16th Name">
-<br><br>
-<input type="text" name="name17" placeholder="17th Name">
-<input type="text" name="name18" placeholder="18th Name">
-<input type="text" name="name19" placeholder="19th Name">
-<input type="text" name="name20" placeholder="20th Name">
-<br><br>
-<input type="submit" value="Randomize and Group" onclick>
-</form>
 </div>
+<form method="post" action="names">
+<div id="text_boxes">
+</div>
+<br>
+<input id="randomize" type="submit" value="Randomize and Group">
+</form>
+<script>
+function addBoxes() {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.setAttribute("name", "name[]");
+    x.setAttribute("placeholder", "Name");
+    var textBoxes = document.getElementById("text_boxes");
+    textBoxes.appendChild(x);
+    textBoxes.innerHTML = textBoxes.innerHTML + "  ";
+}
+
+function removeBoxes(){
+    var removeBox = document.getElementById("text_boxes");
+    removeBox.removeChild(removeBox.lastChild);
+}
+</script>

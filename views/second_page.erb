@@ -1,6 +1,10 @@
 <h1>Here is your random groups:</h1>
 <br>
-	<%if random_grouping.count == 1 && random_grouping[0].count == 2%>
+	<%if random_grouping.class == String%>
+		<h2><%=random_grouping%></h2>
+	<%elsif random_grouping.count == 1 && random_grouping[0].class == String%>
+		<h2>You only entered one name: <%=random_grouping[0]%></h2>
+	<%elsif random_grouping.count == 1 && random_grouping[0].count == 2%>
 		<h2>Your only group is: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>.</h2>
 	<%elsif random_grouping.count == 1 && random_grouping[0].count == 3%>
 		<h2>Your only group is: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>, <%=random_grouping[0][2]%>.</h2>
@@ -67,40 +71,39 @@
 		<h2>Group 1: <%=random_grouping[0][0]%>, <%=random_grouping[0][1]%>; Group 2: <%=random_grouping[1][0]%>, <%=random_grouping[1][1]%>; Group 3: <%=random_grouping[2][0]%>, <%=random_grouping[2][1]%>; Group 4: <%=random_grouping[3][0]%>, <%=random_grouping[3][1]%></h2>
 		<h2>Group 5: <%=random_grouping[4][0]%>, <%=random_grouping[4][1]%>; Group 6: <%=random_grouping[5][0]%>, <%=random_grouping[5][1]%>; Group 7: <%=random_grouping[6][0]%>, <%=random_grouping[6][1]%>.</h2>
 		<h2>Group 8: <%=random_grouping[7][0]%>, <%=random_grouping[7][1]%>; Group 9: <%=random_grouping[8][0]%>, <%=random_grouping[8][1]%>; Group 10: <%=random_grouping[9][0]%>, <%=random_grouping[9][1]%>.</h2>
+	<%else%>
+		<h2><%=random_grouping%></h2>
 	<%end%>
 <br>
 <h1>Would you like to make a new group?</h1>
 <input type="radio" name="choice-same-group" id="choice-for-new">
 <label for="choice-for-new">Make new group</label>
 <div class="reveal-if-active">
-  <h1>Make new groups</h1>
-<form method="post" action="names">
-<input type="text" name="name1" placeholder="1st Name" required autofocus>
-<input type="text" name="name2" placeholder="2nd Name" required>
-<input type="text" name="name3" placeholder="3rd Name">
-<input type="text" name="name4" placeholder="4th Name">
+<h1>Make new groups</h1>
+<div class="btns">
+<button onclick="addBoxes()">Add</button>
+<button onclick="removeBoxes()">Remove</button>
 <br><br>
-<input type="text" name="name5" placeholder="5th Name">
-<input type="text" name="name6" placeholder="6th Name">
-<input type="text" name="name7" placeholder="7th Name">
-<input type="text" name="name8" placeholder="8th Name">
-<br><br>
-<input type="text" name="name9" placeholder="9th Name">
-<input type="text" name="name10" placeholder="10th Name">
-<input type="text" name="name11" placeholder="11th Name">
-<input type="text" name="name12" placeholder="12th Name">
-<br><br>
-<input type="text" name="name13" placeholder="13th Name">
-<input type="text" name="name14" placeholder="14th Name">
-<input type="text" name="name15" placeholder="15th Name">
-<input type="text" name="name16" placeholder="16th Name">
-<br><br>
-<input type="text" name="name17" placeholder="17th Name">
-<input type="text" name="name18" placeholder="18th Name">
-<input type="text" name="name19" placeholder="19th Name">
-<input type="text" name="name20" placeholder="20th Name">
-<br><br>
-<input type="submit" value="Randomize and Group" onclick>
-</form>
-</form>
 </div>
+<form method="post" action="names">
+<div id="text_boxes">
+</div>
+<br>
+<input id="randomize" type="submit" value="Randomize and Group">
+</form>
+<script>
+function addBoxes() {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.setAttribute("name", "name[]");
+    x.setAttribute("placeholder", "Name");
+    var textBoxes = document.getElementById("text_boxes");
+    textBoxes.appendChild(x);
+    textBoxes.innerHTML = textBoxes.innerHTML + "  ";
+}
+
+function removeBoxes(){
+    var removeBox = document.getElementById("text_boxes");
+    removeBox.removeChild(removeBox.lastChild);
+}
+</script>
